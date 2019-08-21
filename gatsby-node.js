@@ -1,64 +1,72 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+const makeRequest = (graphql, request) =>
+  new Promise((resolve, reject) => {
+    // Query for nodes to use in creating pages.
+    resolve(
+      graphql(request).then(result => {
+        if (result.errors) {
+          reject(result.errors)
+        }
+
+        return result
+      })
+    )
+  })
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const result = await graphql(
+  const result = makeRequest(
+    graphql,
     `
       {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
+        allStrapiArtigo {
           edges {
             node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
+              id,
+              titulo
             }
           }
         }
       }
     `
-  )
+  ).then(result => {
+    const posts = result.data.allStrapiArtigo.edges
 
-  if (result.errors) {
-    throw result.errors
-  }
+    result.data.allStrapiArtigo.edges.forEach(({ node }, index) => {
+      const next = index === posts.length - 1 ? null : posts[index + 1].node
+      const previous = index === 0 ? null : posts[index - 1].node
 
-  // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges
-
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
-
-    createPage({
-      path: post.node.fields.slug,
-      component: blogPost,
-      context: {
-        slug: post.node.fields.slug,
-        previous,
-        next,
-      },
+      createPage({
+        path: `/${node.id}`,
+        component: blogPost,
+        context: {
+          id: node.id,
+          previous,
+          next,
+        },
+      })
     })
+    // Create blog posts pages.
+    // const posts = result.data.allStrapiArtigo.edges
+
+    // posts.forEach((post, index) => {
+    //   const previous = index === posts.length - 1 ? null : posts[index + 1].node
+    //   const next = index === 0 ? null : posts[index - 1].node
+
+    //   createPage({
+    //     path: `/${post.id}`,
+    //     component: blogPost,
+    //     context: {
+    //       id: post.id,
+    //       previous,
+    //       next,
+    //     },
+    //   })
+    // })
   })
-}
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
+  return result
 }

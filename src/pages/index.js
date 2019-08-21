@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -10,29 +11,30 @@ class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+    const posts = data.allStrapiArtigo.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
+        {/* <Bio /> */}
         {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
+          /* const title = node.titulo || node.fields.slug */
           return (
-            <div key={node.fields.slug}>
+            <div key={node.id}>
               <h3
                 style={{
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
+                <Link style={{ boxShadow: `none` }} to={`/${node.id}`}>
+                  {node.titulo}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <Img fixed={node.imagem.childImageSharp.fixed} />
+              {/* <small>{node.frontmatter.date}</small> */}
               <p
                 dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
+                  __html: node.conteudo,
                 }}
               />
             </div>
@@ -52,17 +54,21 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allStrapiArtigo {
       edges {
         node {
-          excerpt
-          fields {
-            slug
+          id
+          titulo
+          conteudo
+          imagem {
+            childImageSharp {
+              fixed(width: 200, height: 125) {
+                ...GatsbyImageSharpFixed
+              }
+            }
           }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
+          autor {
+            username
           }
         }
       }
