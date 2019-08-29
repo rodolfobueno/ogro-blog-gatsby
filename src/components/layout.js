@@ -1,116 +1,26 @@
 import React from "react"
 import { Link } from "gatsby"
+import PropTypes from "prop-types"
+import Header from "./header"
 
-import { rhythm, scale } from "../utils/typography"
-
-class Layout extends React.Component {
-  render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
-
-    if (location.pathname === rootPath) {
-      header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
-    return (
-      <div>
-        <nav class="navbar fixed-top navbar-expand-md custom-navbar navbar-dark">
-          <button
-            class="navbar-toggler navbar-toggler-right custom-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapsibleNavbar"
-          >
-            <span class="navbar-toggler-icon "></span>
-          </button>
-          <div class="collapse navbar-collapse " id="collapsibleNavbar">
-            <ul class="navbar-nav ml-auto ">
-              <li class="nav-item">
-                <a class="nav-link" href="#offer">
-                  <b>Our Offer</b>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <b>How it works</b>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <b>Benifits</b>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-
-        <div
-          style={{
-            backgroundColor: "#161616",
-            color: "#fff",
-            textAlign: "center",
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-          }}
-        >
-          <header>{header}</header>
-        </div>
-        <div
-          style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
-            maxWidth: rhythm(24),
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-          }}
-        >
-          <main>{children}</main>
-        </div>
-        <footer>
-          {/* © {new Date().getFullYear()}, Built with
+const Layout = ({ children }) => (
+  <div>
+    <div>
+      <Header />
+    </div>
+    <div className="container conteudo-main">
+      <main>{children}</main>
+    </div>
+    <footer>
+      {/* © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a> */}
-        </footer>
-      </div>
-    )
-  }
+    </footer>
+  </div>
+)
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout
