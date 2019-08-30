@@ -4,11 +4,11 @@ import PropTypes from "prop-types"
 import Header from "./header"
 
 const Layout = ({ children }) => (
-  <div>
-    <div>
+  <div className="layout-main">
+    <div className="layout-header">
       <Header />
     </div>
-    <div className="container conteudo-main">
+    <div className="layout-content">
       <main>{children}</main>
     </div>
     <footer>

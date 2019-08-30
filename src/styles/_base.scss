@@ -1,41 +1,76 @@
-.container#content {
-  margin-top: 60px;
-}
-body {
-  background-color: $white;
-  font-family: $site-font;
-}
-a {
-  color: #0056b3;
-  &:hover {
-    color: #007bff;
-    text-decoration: none;
+html {
+  height: 100%;
+  body {
+    background-color: $white;
+    font-family: $site-font;
+    height: 100%;
+
+    .layout-main {
+      height: 100%;
+      background-color: $white;
+      .layout-header {
+        .navbar {
+          background-color: $white;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+          line-height: 1;
+          height: 80px;
+        }
+        .navbar-light .navbar-nav .nav-link,
+        .navbar-light .navbar-brand {
+          color: $black;
+          &:hover {
+            color: #007bff;
+          }
+        }
+      }
+
+      .container#content {
+        margin-top: 60px;
+      }
+      a {
+        color: #0056b3;
+        &:hover {
+          color: #007bff;
+          text-decoration: none;
+        }
+      }
+      h1 {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      .layout-content {
+        padding-top: 100px;
+        height: 100%;
+
+        .box-index {
+          padding-top: 60px;
+          .ogro-face {
+            border-radius: 50%;
+            box-sizing: border-box;
+            display: block;
+            flex: 0 0 auto;
+            overflow: hidden;
+            margin: auto;
+          }
+          .ebooks-call {
+            top: 100%;
+            width: 100%;
+            text-align: center;
+            background-color: #171b37;
+            color: white;
+            padding: 20px;
+          }
+        }
+      }
+    }
+    #___gatsby,
+    #gatsby-focus-wrapper {
+      height: 100%;
+    }
   }
-}
-h1 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-.navbar {
-  background-color: $dark-gray;
-  // border-right: 1px solid rgba(0, 0, 0, 0.4);
-  // border-left: 1px solid rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-  line-height: 1;
-  height: 60px;
-}
-.navbar-light .navbar-nav .nav-link,
-.navbar-light .navbar-brand {
-  color: $white;
-  &:hover {
-    color: #007bff;
-  }
-}
-ul {
-  list-style: none;
-  padding: 0;
-}
-.conteudo-main {
-  top: 80px;
-  position: absolute;
 }

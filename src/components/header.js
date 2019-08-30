@@ -32,7 +32,9 @@ export default class Header extends React.Component {
       <div>
         <Navbar light fixed="top" expand="sm">
           <div class="container">
-            <NavbarBrand href="/">Ogro Selvagem</NavbarBrand>
+            <NavbarBrand href="/">
+              <img src={"../ogro-logo.png"} width="60" height="60" />
+            </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
@@ -51,9 +53,6 @@ export default class Header extends React.Component {
                     <DropdownItem href="/oralnelas">Oral nelas</DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
-                <NavItem>
-                  <NavLink href="/contato/">Contato</NavLink>
-                </NavItem>
               </Nav>
             </Collapse>
           </div>

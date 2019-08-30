@@ -14,8 +14,8 @@ const Post = ({ titulo, autor, id, data, conteudo, imgFluid }) => {
           <Link to={`/${id}`}> {titulo} </Link>
         </CardTitle>
         <CardSubtitle>
-          <span className="text-info">{data}</span>{" "}
-          <span className="text-info">{autor}</span>
+          por <span className="text-info">{autor}</span> |{" "}
+          <span className="text-info">{data}</span>
         </CardSubtitle>
         <CardText>{conteudo}</CardText>
       </CardBody>
