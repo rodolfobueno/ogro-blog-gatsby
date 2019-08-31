@@ -5,6 +5,8 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import Reactmarkdown from "react-markdown"
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.strapiArtigo
@@ -16,7 +18,14 @@ class BlogPostTemplate extends React.Component {
         <SEO title={post.titulo} description={post.titulo} />
         <h1>{post.titulo}</h1>
         <Img fluid={post.imagem.childImageSharp.fluid} />
-        <div dangerouslySetInnerHTML={{ __html: post.conteudo }} />
+        <Reactmarkdown
+          source={post.conteudo}
+          transformImageUri={uri =>
+            uri.startsWith("http") ? uri : `${process.env.IMAGE_BASE_URL}${uri}`
+          }
+          className="conteudo-artigo"
+          escapeHtml={false}
+        />
         <hr />
 
         <ul
