@@ -8,8 +8,8 @@ const Home = () => (
     <SEO title="Ogro selvagem - Desmistificação do prazer. Para eles e elas." />
     <div className="justify-content-center box-index">
       <section>
-        <div class="container justify-content-center">
-          <div class="tm-section-title text-center">
+        <div className="container justify-content-center">
+          <div className="tm-section-title text-center">
             <img
               src={"../ogro-perfil.png"}
               width="160"
@@ -35,7 +35,7 @@ const Home = () => (
           </div>
         </div>
       </section>
-      <section class="ebooks-call">
+      <section className="ebooks-call">
         Disponibilizamos dois e-books gratuitos para vocês se tornarem experts
         no assunto ORAL.
         <br />
@@ -45,8 +45,8 @@ const Home = () => (
         <img src={"../ebook-oral-neles.png"} alt="" />
       </section>
       <section>
-        <div class="container justify-content-center">
-          <div class="tm-section-title text-center">
+        <div className="container justify-content-center">
+          <div className="tm-section-title text-center">
             <p>Acompanhe todas as dias do ogro no instagram.</p>
           </div>
         </div>

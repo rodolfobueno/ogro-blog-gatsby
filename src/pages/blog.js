@@ -7,10 +7,12 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Post from "../components/post"
 
+import "../styles/index.scss"
+
 const Blog = () => (
   <Layout>
     <SEO title="All posts" />
-    <div class="container justify-content-center text-center">
+    <div className="container justify-content-center text-center">
       <section>
         <h1>Blog</h1>
         <p>Aqui você entrará o melhor conteúdo sobre Sexo da internet.</p>
@@ -21,7 +23,7 @@ const Blog = () => (
         render={data => {
           return (
             <section>
-              <div class="tm-section-title text-center pt-4">
+              <div className="tm-section-title text-center pt-4">
                 <Row>
                   {data.allStrapiArtigo.edges.map(({ node }) => {
                     return (

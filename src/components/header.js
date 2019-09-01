@@ -27,7 +27,7 @@ export default class Header extends React.Component {
     return (
       <div>
         <Navbar light fixed="top" expand="sm">
-          <div class="container">
+          <div className="container">
             <NavbarBrand href="/">
               <img
                 src={"../ogro-logo.png"}

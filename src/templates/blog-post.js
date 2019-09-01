@@ -7,13 +7,15 @@ import SEO from "../components/seo"
 
 import Reactmarkdown from "react-markdown"
 
+import "../styles/index.scss"
+
 const BlogPostTemplate = props => {
   const { previous, next } = props.pageContext
   const post = props.data.strapiArtigo
   return (
     <Layout>
       <SEO title={post.titulo} description={post.titulo} />
-      <div class="container justify-content-center">
+      <div className="container justify-content-center">
         <section>
           <h1>{post.titulo}</h1>
         </section>
