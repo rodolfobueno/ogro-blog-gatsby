@@ -7,25 +7,30 @@ import SEO from "../components/seo"
 
 import Reactmarkdown from "react-markdown"
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.strapiArtigo
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
-
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={post.titulo} description={post.titulo} />
-        <h1>{post.titulo}</h1>
-        <Img fluid={post.imagem.childImageSharp.fluid} />
-        <Reactmarkdown
-          source={post.conteudo}
-          transformImageUri={uri =>
-            uri.startsWith("http") ? uri : `${process.env.IMAGE_BASE_URL}${uri}`
-          }
-          className="conteudo-artigo"
-          escapeHtml={false}
-        />
+const BlogPostTemplate = props => {
+  const { previous, next } = props.pageContext
+  const post = props.data.strapiArtigo
+  return (
+    <Layout>
+      <SEO title={post.titulo} description={post.titulo} />
+      <div class="container justify-content-center">
+        <section>
+          <h1>{post.titulo}</h1>
+        </section>
+        <hr />
+        {/* <Img fluid={post.imagem.childImageSharp.fluid} /> */}
+        <div className="pt-5 pb-3">
+          <Reactmarkdown
+            source={post.conteudo}
+            transformImageUri={uri =>
+              uri.startsWith("http")
+                ? uri
+                : `${process.env.IMAGE_BASE_URL}${uri}`
+            }
+            className="conteudo-artigo"
+            escapeHtml={false}
+          />
+        </div>
         <hr />
 
         <ul
@@ -52,26 +57,19 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-      </Layout>
-    )
-  }
+      </div>
+    </Layout>
+  )
 }
-
-export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostTemplate($id: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     strapiArtigo(id: { eq: $id }) {
       titulo
       conteudo
       imagem {
         childImageSharp {
-          fluid(maxWidth: 600, quality: 100) {
+          fluid(maxWidth: 1080, maxHeight: 350, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -83,3 +81,4 @@ export const pageQuery = graphql`
     }
   }
 `
+export default BlogPostTemplate

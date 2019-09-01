@@ -7,10 +7,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
 } from "reactstrap"
 
 export default class Header extends React.Component {
@@ -33,7 +29,12 @@ export default class Header extends React.Component {
         <Navbar light fixed="top" expand="sm">
           <div class="container">
             <NavbarBrand href="/">
-              <img src={"../ogro-logo.png"} width="60" height="60" />
+              <img
+                src={"../ogro-logo.png"}
+                width="60"
+                height="60"
+                alt="Logo do Ogro"
+              />
             </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>

@@ -1,58 +1,53 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
 
 import { Col, Row } from "reactstrap"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Post from "../components/post"
 
-import "../styles/index.scss"
-import Post from "../components/Post"
+const Blog = () => (
+  <Layout>
+    <SEO title="All posts" />
+    <div class="container justify-content-center text-center">
+      <section>
+        <h1>Blog</h1>
+        <p>Aqui você entrará o melhor conteúdo sobre Sexo da internet.</p>
+      </section>
+      <hr />
+      <StaticQuery
+        query={PostsQuery}
+        render={data => {
+          return (
+            <section>
+              <div class="tm-section-title text-center pt-4">
+                <Row>
+                  {data.allStrapiArtigo.edges.map(({ node }) => {
+                    return (
+                      <Col md="4">
+                        <Post
+                          titulo={node.titulo}
+                          autor={node.autor.username}
+                          id={`/${node.id}`}
+                          data={node.data}
+                          resumo={node.resumo}
+                          imgFluid={node.imagem.childImageSharp.fluid}
+                        />
+                      </Col>
+                    )
+                  })}
+                </Row>
+              </div>
+            </section>
+          )
+        }}
+      />
+    </div>
+  </Layout>
+)
 
-class Blog extends React.Component {
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allStrapiArtigo.edges
-
-    return (
-      <Layout location={this.props.location}>
-        <SEO title="All posts" />
-        <div class="container justify-content-center text-center">
-          <section>
-            <h1>Blog</h1>
-            <p>Aqui você entrará o melhor conteúdo sobre Sexo da internet.</p>
-          </section>
-          <hr />
-          <section>
-            <div class="tm-section-title text-center pt-4">
-              <Row>
-                {posts.map(({ node }) => {
-                  return (
-                    <Col md="4">
-                      <Post
-                        titulo={node.titulo}
-                        autor={node.autor.username}
-                        id={`/${node.id}`}
-                        data={node.data}
-                        resumo={node.resumo}
-                        imgFluid={node.imagem.childImageSharp.fluid}
-                      />
-                    </Col>
-                  )
-                })}
-              </Row>
-            </div>
-          </section>
-        </div>
-      </Layout>
-    )
-  }
-}
-
-export default Blog
-
-export const pageQuery = graphql`
+const PostsQuery = graphql`
   query {
     site {
       siteMetadata {
@@ -69,7 +64,7 @@ export const pageQuery = graphql`
           resumo
           imagem {
             childImageSharp {
-              fluid(maxWidth: 200, maxHeight: 125) {
+              fluid(maxWidth: 400, maxHeight: 250, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -82,3 +77,4 @@ export const pageQuery = graphql`
     }
   }
 `
+export default Blog
