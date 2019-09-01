@@ -18,22 +18,33 @@ class Blog extends React.Component {
     return (
       <Layout location={this.props.location}>
         <SEO title="All posts" />
-        <Row>
-          {posts.map(({ node }) => {
-            return (
-              <Col md="4">
-                <Post
-                  titulo={node.titulo}
-                  autor={node.autor.username}
-                  id={`/${node.id}`}
-                  data={node.data}
-                  conteudo={node.resumo}
-                  imgFluid={node.imagem.childImageSharp.fluid}
-                />
-              </Col>
-            )
-          })}
-        </Row>
+        <div class="container justify-content-center text-center">
+          <section>
+            <h1>Blog</h1>
+            <p>Aqui você entrará o melhor conteúdo sobre Sexo da internet.</p>
+          </section>
+          <hr />
+          <section>
+            <div class="tm-section-title text-center pt-4">
+              <Row>
+                {posts.map(({ node }) => {
+                  return (
+                    <Col md="4">
+                      <Post
+                        titulo={node.titulo}
+                        autor={node.autor.username}
+                        id={`/${node.id}`}
+                        data={node.data}
+                        resumo={node.resumo}
+                        imgFluid={node.imagem.childImageSharp.fluid}
+                      />
+                    </Col>
+                  )
+                })}
+              </Row>
+            </div>
+          </section>
+        </div>
       </Layout>
     )
   }

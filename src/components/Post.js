@@ -3,7 +3,7 @@ import { Card, CardTitle, CardText, CardBody, CardSubtitle } from "reactstrap"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-const Post = ({ titulo, autor, id, data, conteudo, imgFluid }) => {
+const Post = ({ titulo, autor, id, data, resumo, imgFluid }) => {
   return (
     <Card key={id}>
       <Link to={`/${id}`}>
@@ -17,7 +17,8 @@ const Post = ({ titulo, autor, id, data, conteudo, imgFluid }) => {
           por <span className="text-info">{autor}</span> |{" "}
           <span className="text-info">{data}</span>
         </CardSubtitle>
-        <CardText>{conteudo}</CardText>
+        <hr />
+        <CardText>{resumo}</CardText>
       </CardBody>
     </Card>
   )

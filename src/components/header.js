@@ -42,17 +42,11 @@ export default class Header extends React.Component {
                   <NavLink href="/">Home</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/blog/">Blog</NavLink>
+                  <NavLink href="/blog">Blog</NavLink>
                 </NavItem>
-                <UncontrolledDropdown nav inNavbar>
-                  <DropdownToggle nav caret>
-                    E-books
-                  </DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem href="/oralneles">Oral neles</DropdownItem>
-                    <DropdownItem href="/oralnelas">Oral nelas</DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
+                <NavItem>
+                  <NavLink href="/ebooks">E-books</NavLink>
+                </NavItem>
               </Nav>
             </Collapse>
           </div>

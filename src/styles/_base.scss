@@ -8,10 +8,11 @@ html {
     background-color: $white;
     font-family: $site-font;
     height: 100%;
+    background-color: #d0d0d045;
+    font-size: 0.9rem;
 
     .layout-main {
       height: 100%;
-      background-color: $white;
       .layout-header {
         .navbar {
           background-color: $white;
@@ -19,12 +20,20 @@ html {
           line-height: 1;
           height: 80px;
         }
+        .nav-item {
+          padding: 10px;
+        }
         .navbar-light .navbar-nav .nav-link,
         .navbar-light .navbar-brand {
           color: $black;
           &:hover {
-            color: #007bff;
+            color: #1d49a0b0;
           }
+        }
+        .navbar-collapse {
+          background-color: $white;
+          margin-top: 5px;
+          padding: 10px 15px;
         }
       }
 
@@ -32,7 +41,8 @@ html {
         margin-top: 60px;
       }
       a {
-        color: #0056b3;
+        color: $blue-strong;
+        font-weight: bold;
         &:hover {
           color: #007bff;
           text-decoration: none;
@@ -52,7 +62,7 @@ html {
         height: 100%;
 
         .box-index {
-          padding-top: 60px;
+          padding-top: 35px;
           .ogro-face {
             border-radius: 50%;
             box-sizing: border-box;
@@ -65,8 +75,8 @@ html {
             top: 100%;
             width: 100%;
             text-align: center;
-            background-color: #171b37;
-            color: white;
+            background-color: $blue-strong;
+            color: &white;
             padding: 20px;
           }
         }
