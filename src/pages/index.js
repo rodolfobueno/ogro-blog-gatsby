@@ -3,13 +3,15 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../styles/index.scss"
 
+import { Button, Form, FormGroup, Input } from "reactstrap"
+
 const Home = () => (
   <Layout>
     <SEO title="Ogro selvagem - Desmistificação do prazer. Para eles e elas." />
     <div className="justify-content-center box-index">
       <section>
         <div className="container justify-content-center">
-          <div className="tm-section-title text-center">
+          <div className="tm-section-title text-center pb-4">
             <img
               src={"../ogro-perfil.png"}
               width="160"
@@ -41,13 +43,24 @@ const Home = () => (
         <br />
         Realizem o donwload gratuitamente.
         <br />
-        <img src={"../ebook-oral-neles.png"} width="300" height="300" alt="" />
-        <img src={"../ebook-oral-neles.png"} alt="" />
+        <img src={"../ebook-oral-neles.png"} width="200" height="200" alt="" />
+        <img src={"../ebook-oral-neles.png"} width="200" height="200" alt="" />
       </section>
-      <section>
+      <section className="pt-5 pb-4">
         <div className="container justify-content-center">
           <div className="tm-section-title text-center">
-            <p>Acompanhe todas as dias do ogro no instagram.</p>
+            <p>Inscreva-se para acompanhar todo o conteúdo em primeira mão.</p>
+            <Form className="justify-content-center">
+              <FormGroup>
+                <Input
+                  type="email"
+                  name="email"
+                  id="exampleEmail"
+                  placeholder="Seu melhor e-mail"
+                />
+              </FormGroup>
+              <Button>Cadastrar</Button>
+            </Form>
           </div>
         </div>
       </section>

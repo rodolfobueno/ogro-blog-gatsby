@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -20,7 +19,6 @@ const BlogPostTemplate = props => {
           <h1>{post.titulo}</h1>
         </section>
         <hr />
-        {/* <Img fluid={post.imagem.childImageSharp.fluid} /> */}
         <div className="pt-5 pb-3">
           <Reactmarkdown
             source={post.conteudo}
@@ -69,13 +67,6 @@ export const pageQuery = graphql`
     strapiArtigo(id: { eq: $id }) {
       titulo
       conteudo
-      imagem {
-        childImageSharp {
-          fluid(maxWidth: 1080, maxHeight: 350, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
       autor {
         id
         username
@@ -84,3 +75,11 @@ export const pageQuery = graphql`
   }
 `
 export default BlogPostTemplate
+
+/* imagem {
+  childImageSharp {
+    fluid(maxWidth: 1080, maxHeight: 350, quality: 100) {
+      ...GatsbyImageSharpFluid
+    }
+  }
+} */
