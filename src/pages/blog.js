@@ -1,13 +1,9 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
-
 import { Col, Row } from "reactstrap"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Post from "../components/post"
-
-import "../styles/index.scss"
 
 const Blog = () => (
   <Layout>

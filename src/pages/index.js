@@ -1,14 +1,9 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import "../styles/index.scss"
-
-import { graphql, StaticQuery } from "gatsby"
-
+import { graphql, StaticQuery, Link } from "gatsby"
 import { Col, Row } from "reactstrap"
-
 import Post from "../components/post"
-
 import { Button } from "reactstrap"
 
 const Home = () => (
@@ -38,9 +33,11 @@ const Home = () => (
               Ficou curioso para saber quem é o Ogro ? <br />
               Quer conhecer um pouco da minha história ? <br />
             </p>
-            <Button outline color="primary">
-              Quero conhecer a história do Ogro
-            </Button>
+            <Link to="/historia">
+              <Button outline color="primary">
+                Quero conhecer a história do Ogro
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -55,7 +52,7 @@ const Home = () => (
         <a
           href="http://oralneles.ogroselvagem.com.br?origem=site-ogro"
           target="_blank"
-          rel="noopener norefferer"
+          rel="noopener noreferrer"
         >
           <img
             src={"../ebook-oral-neles.png"}
