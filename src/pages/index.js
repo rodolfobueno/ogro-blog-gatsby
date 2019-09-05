@@ -3,7 +3,13 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../styles/index.scss"
 
-import { Button, Form, FormGroup, Input } from "reactstrap"
+import { graphql, StaticQuery } from "gatsby"
+
+import { Col, Row } from "reactstrap"
+
+import Post from "../components/post"
+
+import { Button } from "reactstrap"
 
 const Home = () => (
   <Layout>
@@ -20,52 +26,103 @@ const Home = () => (
               alt="Imagem do ogro"
             />
             <br />
-            <h2>Sejam bem vindos ao Covil do Ogro.</h2>
-            <p>
-              Mussum Ipsum, cacilds vidis litro abertis. Praesent vel viverra
-              nisi. Mauris aliquet nunc non turpis scelerisque, eget.
-              Interessantiss quisso pudia ce receita de bolis, mais bolis eu num
-              gostis. Quem num gosta di mé, boa gentis num é. Pra lá , depois
-              divoltis porris, paradis.
+            <h3>Olá, seja bem vindo ao covil do Ogro Selvagem!</h3>
+            <p className="pt-3">
+              Lugar onde a teoria e a prática do sexo se encontram em harmonia.
+              <br />
+              Confie e siga o guia. Aqui você irá aprender mais sobre as
+              verdades e mitos do sexo, sobre os seus mistérios e, claro, como
+              dar mais prazer aos seus companheiro(a)s.
             </p>
             <p>
-              Mé faiz elementum girarzis, nisi eros vermeio. Detraxit consequat
-              et quo num tendi nada. Suco de cevadiss deixa as pessoas mais
-              interessantis. Posuere libero varius. Nullam a nisl ut ante
-              blandit hendrerit. Aenean sit amet nisi.
+              Ficou curioso para saber quem é o Ogro ? <br />
+              Quer conhecer um pouco da minha história ? <br />
             </p>
+            <Button outline color="primary">
+              Quero conhecer a história do Ogro
+            </Button>
           </div>
         </div>
       </section>
-      <section className="ebooks-call">
-        Disponibilizamos dois e-books gratuitos para vocês se tornarem experts
-        no assunto ORAL.
+      <section className="ebooks-call mt-4">
+        <p>
+          Disponibilizei um e-book gratuito para vocês se tornarem experts no
+          assunto: ORAL NELES.
+          <br />
+          Realizem o donwload agora mesmo.
+        </p>
         <br />
-        Realizem o donwload gratuitamente.
-        <br />
-        <img src={"../ebook-oral-neles.png"} width="200" height="200" alt="" />
-        <img src={"../ebook-oral-neles.png"} width="200" height="200" alt="" />
+        <a
+          href="http://oralneles.ogroselvagem.com.br?origem=site-ogro"
+          target="_blank"
+          rel="noopener norefferer"
+        >
+          <img
+            src={"../ebook-oral-neles.png"}
+            width="200"
+            height="200"
+            alt=""
+          />
+        </a>
       </section>
-      <section className="pt-5 pb-4">
+      <section className="pt-5">
         <div className="container justify-content-center">
-          <div className="tm-section-title text-center">
-            <p>Inscreva-se para acompanhar todo o conteúdo em primeira mão.</p>
-            <Form className="justify-content-center">
-              <FormGroup>
-                <Input
-                  type="email"
-                  name="email"
-                  id="exampleEmail"
-                  placeholder="Seu melhor e-mail"
-                />
-              </FormGroup>
-              <Button>Cadastrar</Button>
-            </Form>
+          <div className="tm-section-title text-center pb-4">
+            <h3>Últimos posts no Blog</h3>
           </div>
+          <StaticQuery
+            query={PostsQuery}
+            render={data => {
+              return (
+                <Row className="justify-content-center">
+                  {data.allStrapiArtigo.edges.map(({ node }) => {
+                    return (
+                      <Col sm="4">
+                        <Post
+                          titulo={node.titulo}
+                          autor={node.autor.username}
+                          id={`/${node.id}`}
+                          data={node.data}
+                          resumo={node.resumo}
+                          imgFluid={node.imagem.childImageSharp.fluid}
+                        />
+                      </Col>
+                    )
+                  })}
+                </Row>
+              )
+            }}
+          />
         </div>
       </section>
     </div>
   </Layout>
 )
+
+const PostsQuery = graphql`
+  query {
+    allStrapiArtigo(sort: { fields: [data], order: DESC }, limit: 2) {
+      edges {
+        node {
+          id
+          titulo
+          conteudo
+          data(formatString: "DD/MM/YYYY")
+          resumo
+          imagem {
+            childImageSharp {
+              fluid(maxWidth: 400, maxHeight: 250, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          autor {
+            username
+          }
+        }
+      }
+    }
+  }
+`
 
 export default Home

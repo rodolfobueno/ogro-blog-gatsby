@@ -51,11 +51,6 @@ const Blog = () => (
 
 const PostsQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allStrapiArtigo(sort: { fields: [data], order: DESC }) {
       edges {
         node {
