@@ -18,7 +18,7 @@ html {
           background-color: $white;
           border-bottom: 1px solid rgba(0, 0, 0, 0.4);
           line-height: 1;
-          height: 80px;
+          height: 110px;
         }
         .nav-item {
           padding: 10px;
@@ -27,7 +27,7 @@ html {
         .navbar-light .navbar-brand {
           color: $black;
           &:hover {
-            color: #1d49a0b0;
+            color: $green;
           }
         }
         .navbar-collapse {
@@ -38,7 +38,7 @@ html {
         a {
           color: $blue-strong;
           &:hover {
-            color: #007bff;
+            color: $green;
             text-decoration: none;
           }
         }
@@ -72,7 +72,7 @@ html {
           }
           .ebooks-call {
             text-align: center;
-            background-color: $blue-strong;
+            background-color: $green;
             color: $white;
             padding: 40px 0px;
           }

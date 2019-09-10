@@ -27,7 +27,7 @@ const Footer = () => (
         </ul>
       </div>
       <div className="col-lg-4 col-md-12 col-12 pb-3">
-        <h6>Baixe os ebooks gratuitos</h6>
+        <h6>E-books gratuitos</h6>
         <ul>
           <li>
             <a
