@@ -11,7 +11,7 @@ const Home = () => (
     <SEO title="Ogro selvagem - Desmistificação do prazer. Para eles e elas." />
     <div className="justify-content-center box-index">
       <section>
-        <div className="container justify-content-center">
+        <div className="container justify-content-center col-lg-6">
           <div className="tm-section-title text-center pb-4">
             <img
               src={"../ogro-perfil.png"}
@@ -23,30 +23,37 @@ const Home = () => (
             <br />
             <h3>Olá, seja bem vindo ao covil do Ogro Selvagem!</h3>
             <p className="pt-3">
-              Lugar onde a teoria e a prática do sexo se encontram em harmonia.
-              <br />
-              Confie e siga o guia. Aqui você irá aprender mais sobre as
-              verdades e mitos do sexo, sobre os seus mistérios e, claro, como
-              dar mais prazer aos seus companheiro(a)s.
+              Lugar onde a teoria e a prática do <strong>sexo</strong> se
+              encontram em harmonia.
             </p>
             <p>
-              Ficou curioso para saber quem é o Ogro ? <br />
-              Quer conhecer um pouco da minha história ? <br />
+              <strong>Confie</strong> e siga o guia. Aqui você irá{" "}
+              <strong>aprender</strong> mais sobre as verdades e mitos do{" "}
+              <strong>sexo</strong>, sobre os seus mistérios e, claro, como dar
+              mais <strong>prazer</strong> aos seus companheiro(a)s.
             </p>
-            <Link to="/historia">
-              <Button outline color="primary">
-                Quero conhecer a história do Ogro
-              </Button>
-            </Link>
+            <p>
+              O <strong>ogro</strong> foi criado para que pessoas possam{" "}
+              <strong>usufruir</strong> de tudo que eu aprendi, sem precisar
+              passar por tudo que já passei. Por um mundo com mais{" "}
+              <strong>prazer</strong> e mais <strong>orgasmos</strong>.
+            </p>
+            <p>
+              <Link to="/historia">
+                <Button color="link">
+                  Clique aqui e conheça a história do Ogro
+                </Button>
+              </Link>
+            </p>
           </div>
         </div>
       </section>
       <section className="ebooks-call mt-4">
         <p>
-          Disponibilizei um e-book gratuito para vocês se tornarem experts no
-          assunto: ORAL NELES.
+          Disponibilizei um e-book <strong>gratuito</strong> para você se tornar
+          um expert no assunto: ORAL NELES.
           <br />
-          Realizem o donwload agora mesmo.
+          Realize o donwload agora mesmo.
         </p>
         <br />
         <a

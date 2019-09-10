@@ -7,8 +7,8 @@ const Historia = () => (
     <Layout>
       <SEO title="Contato" />
       <div className="container">
-        <h2 className="text-center">A história do Ogro Selvagem.</h2>
-        <div className="pt-3">
+        <h2 className="text-center">A história do Ogro Selvagem</h2>
+        <div className="pt-3 pb-3">
           <p>Eu não nasci Ogro!</p>
           <p>
             Muitas vezes parece estranho imaginar uma pessoa que é referência em

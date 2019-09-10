@@ -35,19 +35,19 @@ html {
           margin-top: 5px;
           padding: 10px 15px;
         }
+        a {
+          color: $blue-strong;
+          &:hover {
+            color: #007bff;
+            text-decoration: none;
+          }
+        }
       }
 
       .container#content {
         margin-top: 60px;
       }
-      a {
-        color: $blue-strong;
-        font-weight: bold;
-        &:hover {
-          color: #007bff;
-          text-decoration: none;
-        }
-      }
+
       h1 {
         margin-bottom: 20px;
         text-align: center;
