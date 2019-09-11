@@ -1,6 +1,20 @@
 .card {
   margin-bottom: 30px;
   box-shadow: 6px 6px 18px 0px rgba(0, 0, 0, 0.3);
+  &:hover {
+    border: 1px solid #b19d9d;
+  }
+  .card-title,
+  .card-subtitle {
+    text-align: center;
+  }
+}
+.link-card {
+  color: #333 !important;
+  text-decoration: none !important;
+  &:hover {
+    text-decoration: none !important;
+  }
 }
 ul.post-tags {
   padding: 0;

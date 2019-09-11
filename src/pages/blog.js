@@ -27,7 +27,7 @@ const Blog = () => (
                         <Post
                           titulo={node.titulo}
                           autor={node.autor.username}
-                          id={`/${node.id}`}
+                          id={`/${node.url}`}
                           data={node.data}
                           resumo={node.resumo}
                           imgFluid={node.imagem.childImageSharp.fluid}
@@ -53,6 +53,7 @@ const PostsQuery = graphql`
           id
           titulo
           conteudo
+          url
           data(formatString: "DD/MM/YYYY")
           resumo
           imagem {

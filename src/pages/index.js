@@ -39,7 +39,7 @@ const Home = () => (
               <strong>prazer</strong> e mais <strong>orgasmos</strong>.
             </p>
             <p>
-              <Link to="/historia">
+              <Link to="/minha-historia">
                 <Button color="link">
                   Clique aqui e conheça a história do Ogro
                 </Button>
@@ -72,7 +72,7 @@ const Home = () => (
       <section className="pt-5">
         <div className="container justify-content-center">
           <div className="tm-section-title text-center pb-4">
-            <h3>Últimos posts no Blog</h3>
+            <h3>Novidades no Blog</h3>
           </div>
           <StaticQuery
             query={PostsQuery}
@@ -85,7 +85,7 @@ const Home = () => (
                         <Post
                           titulo={node.titulo}
                           autor={node.autor.username}
-                          id={`/${node.id}`}
+                          id={`/${node.url}`}
                           data={node.data}
                           resumo={node.resumo}
                           imgFluid={node.imagem.childImageSharp.fluid}
@@ -111,6 +111,7 @@ const PostsQuery = graphql`
           id
           titulo
           conteudo
+          url
           data(formatString: "DD/MM/YYYY")
           resumo
           imagem {

@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Historia = () => (
+const MinhaHistoria = () => (
   <div>
     <Layout>
       <SEO title="Contato" />
@@ -163,4 +163,4 @@ const Historia = () => (
   </div>
 )
 
-export default Historia
+export default MinhaHistoria

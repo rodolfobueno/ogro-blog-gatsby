@@ -19,6 +19,10 @@ const BlogPostTemplate = props => {
           <h1>{post.titulo}</h1>
         </section>
         <hr />
+        <div className="text-center">
+          por <span className="text-info">{post.autor.username}</span> |{" "}
+          <span className="text-info">{post.data}</span>
+        </div>
         <div className="pt-5 pb-3">
           <Reactmarkdown
             source={post.conteudo}
@@ -67,6 +71,7 @@ export const pageQuery = graphql`
     strapiArtigo(id: { eq: $id }) {
       titulo
       conteudo
+      data(formatString: "DD/MM/YYYY")
       autor {
         id
         username

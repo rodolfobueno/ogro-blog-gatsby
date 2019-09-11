@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Ogro Selvagem <contato@ogroselvagem.com.br>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/rodolfobueno/ogro-blog-gatsby/issues"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",

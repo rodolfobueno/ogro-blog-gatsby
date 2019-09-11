@@ -26,8 +26,9 @@ exports.createPages = async ({ graphql, actions }) => {
         allStrapiArtigo {
           edges {
             node {
-              id,
+              id
               titulo
+              url
             }
           }
         }
@@ -41,7 +42,7 @@ exports.createPages = async ({ graphql, actions }) => {
       const previous = index === 0 ? null : posts[index - 1].node
 
       createPage({
-        path: `/${node.id}`,
+        path: `/${node.url}`,
         component: blogPost,
         context: {
           id: node.id,
