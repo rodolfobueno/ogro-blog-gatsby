@@ -31,8 +31,8 @@ export default class Header extends React.Component {
             <NavbarBrand href="/">
               <img
                 src={"../ogro-logo.png"}
-                width="140"
-                height="90"
+                width="120"
+                height="80"
                 alt="Logo do Ogro"
               />
             </NavbarBrand>

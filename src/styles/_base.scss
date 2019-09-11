@@ -26,6 +26,7 @@ html {
         .navbar-light .navbar-nav .nav-link,
         .navbar-light .navbar-brand {
           color: $black;
+          padding-top: 0;
           &:hover {
             color: $green;
           }
@@ -58,7 +59,7 @@ html {
         padding: 0;
       }
       .layout-content {
-        padding-top: 100px;
+        padding-top: 150px;
 
         .box-index {
           padding-top: 35px;

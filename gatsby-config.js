@@ -1,24 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: `Blog do Ogro Selvagem`,
-    author: `O próprio Ogro Selvagem`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Ogro Selvagem - Desmistificador do Sexo`,
+    author: `Ogro Selvagem`,
+    description: `Site do Ogro Selvagem. O deterntor do guia do Sexo. Por um mundo com mais sexo e orgasmos.`,
+    siteUrl: `https://www.ogroselvagem.com.br/`,
     social: {
-      twitter: `kylemathews`,
+      instagram: `ogroselvagem`,
     },
   },
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-offline",
     "gatsby-plugin-react-helmet",
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
     {
       resolve: "gatsby-source-strapi",
       options: {
