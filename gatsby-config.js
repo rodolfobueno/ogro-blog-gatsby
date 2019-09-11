@@ -57,17 +57,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Site do Ogro Selvagem`,
-        short_name: `Ogro - Website`,
+        short_name: `ogroselvagem.com.br`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#4d8c67`,
@@ -75,5 +70,24 @@ module.exports = {
         icon: `content/assets/icon-pwa.png`,
       },
     },
-  ],
+    `gatsby-plugin-netlify`,
+    {
+      resolve: 'gatsby-plugin-netlify-cache',
+      options: {
+        cachePublic: true
+      }
+    },
+  ]
+}
+
+if (process.env.CONTEXT === 'production') {
+  const analytics = {
+    resolve: `gatsby-plugin-google-analytics`,
+    options: {
+      trackingId: process.env.GOOGLE_ANALYTICS_ID,
+      head: false
+    }
+  }
+
+  plugins.push(analytics)
 }
