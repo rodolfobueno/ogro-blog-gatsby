@@ -27,7 +27,7 @@ export default class Header extends React.Component {
     return (
       <div>
         <Navbar light fixed="top" expand="sm">
-          <div className="container">
+          <div className="container justify-content-center">
             <NavbarBrand href="/">
               <img
                 src={"../ogro-logo.png"}
@@ -36,20 +36,6 @@ export default class Header extends React.Component {
                 alt="Logo do Ogro"
               />
             </NavbarBrand>
-            <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <NavLink href="/">Home</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/minha-historia">Minha história</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/blog">Blog</NavLink>
-                </NavItem>
-              </Nav>
-            </Collapse>
           </div>
         </Navbar>
       </div>

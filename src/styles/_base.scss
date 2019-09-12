@@ -18,7 +18,7 @@ html {
           background-color: $white;
           border-bottom: 1px solid rgba(0, 0, 0, 0.4);
           line-height: 1;
-          height: 110px;
+          height: 100px;
         }
         .nav-item {
           padding: 20px 10px 0px 10px;
@@ -27,7 +27,6 @@ html {
         .navbar-light .navbar-brand {
           color: $black;
           padding-top: 0;
-          padding-bottom: 15px;
           &:hover {
             color: $green;
           }
@@ -71,14 +70,7 @@ html {
 
         .box-index {
           padding-top: 35px;
-          .ogro-face {
-            border-radius: 50%;
-            box-sizing: border-box;
-            display: block;
-            flex: 0 0 auto;
-            overflow: hidden;
-            margin: auto;
-          }
+
           .ebooks-call {
             text-align: center;
             background-color: $green;
@@ -107,4 +99,12 @@ html {
       }
     }
   }
+}
+.ogro-face {
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: block;
+  flex: 0 0 auto;
+  overflow: hidden;
+  margin: auto;
 }
