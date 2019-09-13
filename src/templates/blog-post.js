@@ -48,14 +48,14 @@ const BlogPostTemplate = props => {
         >
           <li>
             {previous && (
-              <Link to={`/${previous.id}`} rel="prev">
+              <Link to={`/${previous.url}`} rel="prev">
                 ← {previous.titulo}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={`/${next.id}`} rel="next">
+              <Link to={`/${next.url}`} rel="next">
                 {next.titulo} →
               </Link>
             )}

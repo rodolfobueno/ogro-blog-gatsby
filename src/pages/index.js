@@ -4,108 +4,91 @@ import SEO from "../components/seo"
 import { graphql, StaticQuery, Link } from "gatsby"
 import { Col, Row } from "reactstrap"
 import Post from "../components/post"
-import { Button } from "reactstrap"
+import Social from "../components/social"
 
 const Home = () => (
   <Layout>
-    <SEO title="Ogro selvagem - Desmistificação do prazer. Para eles e elas." />
-    <div className="justify-content-center box-index">
-      <section>
-        <div className="container justify-content-center col-lg-6">
-          <div className="tm-section-title text-center pb-4">
-            <img
-              src={"../ogro-perfil.png"}
-              width="160"
-              height="160"
-              className="ogro-face"
-              alt="Imagem do ogro"
-            />
-            <br />
-            <h3>Olá, seja bem vindo ao covil do Ogro Selvagem!</h3>
-            <p className="pt-3">
-              Lugar onde a teoria e a prática do <strong>sexo</strong> se
-              encontram em harmonia.
-            </p>
-            <p>
-              <strong>Confie</strong> e siga o guia. Aqui você irá{" "}
-              <strong>aprender</strong> mais sobre as verdades e mitos do{" "}
-              <strong>sexo</strong>, sobre os seus mistérios e, claro, como dar
-              mais <strong>prazer</strong> aos seus companheiro(a)s.
-            </p>
-            <p>
-              O <strong>ogro</strong> foi criado para que pessoas possam{" "}
-              <strong>usufruir</strong> de tudo que eu aprendi, sem precisar
-              passar por tudo que já passei. Por um mundo com mais{" "}
-              <strong>prazer</strong> e mais <strong>orgasmos</strong>.
-            </p>
-            <p>
-              <Link to="/minha-historia">
-                <Button color="link">
-                  Clique aqui e conheça a história do Ogro
-                </Button>
-              </Link>
-            </p>
-          </div>
-        </div>
-      </section>
-      <section className="ebooks-call mt-4">
-        <p>
-          Disponibilizei um e-book <strong>gratuito</strong> para você se tornar
-          um expert no assunto: ORAL NELES.
-          <br />
-          Realize o donwload agora mesmo.
-        </p>
-        <br />
-        <a
-          href="http://oralneles.ogroselvagem.com.br?origem=site-ogro"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src={"../ebook-oral-neles.png"}
-            width="200"
-            height="200"
-            alt=""
-          />
-        </a>
-      </section>
-      <section className="pt-5">
-        <div className="container justify-content-center">
-          <div className="tm-section-title text-center pb-4">
-            <h3>Novidades no Blog</h3>
-          </div>
-          <StaticQuery
-            query={PostsQuery}
-            render={data => {
-              return (
-                <Row className="justify-content-center">
-                  {data.allStrapiArtigo.edges.map(({ node }) => {
-                    return (
-                      <Col sm="4">
-                        <Post
-                          titulo={node.titulo}
-                          autor={node.autor.username}
-                          id={`/${node.url}`}
-                          data={node.data}
-                          resumo={node.resumo}
-                          imgFluid={node.imagem.childImageSharp.fluid}
-                        />
-                      </Col>
-                    )
-                  })}
-                </Row>
-              )
-            }}
-          />
-        </div>
-      </section>
+    <SEO title="Blog" />
+    <div className="container justify-content-center text-center">
+      <StaticQuery
+        query={PostsQuery}
+        render={data => {
+          return (
+            <section>
+              <div className="row">
+                <div className="col-lg-9 col-md-12 col-12">
+                  <Row>
+                    {data.allStrapiArtigo.edges.map(({ node }) => {
+                      return (
+                        <Col md="6">
+                          <Post
+                            titulo={node.titulo}
+                            autor={node.autor.username}
+                            id={`/${node.url}`}
+                            data={node.data}
+                            resumo={node.resumo}
+                            imgFluid={node.imagem.childImageSharp.fluid}
+                          />
+                        </Col>
+                      )
+                    })}
+                  </Row>
+                </div>
+                <div className="col-lg-3 col-md-12 col-12">
+                  <div className="col-12 justify-content-center">
+                    <img
+                      src={"../ogro-perfil.png"}
+                      width="160"
+                      height="160"
+                      className="ogro-face"
+                      alt="Imagem do ogro"
+                    />
+                    <div className="pt-3 pb-3">
+                      <h6>
+                        <strong>Ogro Selvagem</strong>
+                      </h6>
+                      O ogro que ensina ! <br />
+                      <br />
+                      Não importa o que você tem <br />
+                      Mas o que faz com o que tem.
+                    </div>
+                    <Social />
+                  </div>
+                  <div className="col-12 justify-content-center pt-5">
+                    <h6>
+                      <strong>E-book gratuito</strong>
+                    </h6>
+                    <ul>
+                      <li>
+                        <a
+                          href="http://oralneles.ogroselvagem.com.br?origem=site-ogro"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="Realizar download do e-book"
+                        >
+                          <img
+                            src={"../ebook-oral-neles.png"}
+                            width="200"
+                            height="200"
+                            alt=""
+                          />
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )
+        }}
+      />
     </div>
   </Layout>
 )
 
 const PostsQuery = graphql`
   query {
-    allStrapiArtigo(sort: { fields: [data], order: DESC }, limit: 2) {
+    allStrapiArtigo(sort: { fields: [data], order: DESC }) {
       edges {
         node {
           id

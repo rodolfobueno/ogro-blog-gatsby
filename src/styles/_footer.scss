@@ -1,23 +1,12 @@
 .site-footer {
   background-color: $gray;
   color: $white;
-  margin-top: 20px;
-  padding: 35px;
   text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
 
-  .footer-social-links {
-    text-align: center;
-
-    ul.social-links-list {
-      li {
-        display: inline-block;
-
-        a {
-          padding: 0 15px;
-        }
-      }
-    }
-  }
   ul {
     a {
       color: $white;

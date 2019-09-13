@@ -67,6 +67,7 @@ html {
       }
       .layout-content {
         padding-top: 150px;
+        padding-bottom: 50px;
 
         .box-index {
           padding-top: 35px;
@@ -107,4 +108,19 @@ html {
   flex: 0 0 auto;
   overflow: hidden;
   margin: auto;
+}
+
+.social-links {
+  text-align: center;
+  padding-top: 10px;
+
+  ul.social-links-list {
+    li {
+      display: inline-block;
+
+      a {
+        padding: 0 15px;
+      }
+    }
+  }
 }

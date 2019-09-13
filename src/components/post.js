@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import PropTypes from "prop-types"
 
 const Post = ({ titulo, autor, id, data, resumo, imgFluid }) => (
-  <Link to={`/${id}`} className="link-card">
+  <Link to={`/${id}`} className="link-card" title={titulo}>
     <Card key={id}>
       <Img className="card-image-top" fluid={imgFluid} />
       <CardBody>
