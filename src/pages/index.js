@@ -34,7 +34,7 @@ const Home = () => (
                     })}
                   </Row>
                 </div>
-                <div className="col-lg-3 col-md-12 col-12">
+                <div className="col-lg-3 col-md-12 col-12  box-info-ogro">
                   <div className="col-12 justify-content-center">
                     <img
                       src={"../ogro-perfil.png"}
