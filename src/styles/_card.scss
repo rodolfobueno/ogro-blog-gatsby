@@ -25,3 +25,15 @@ ul.post-tags {
     margin-right: 10px;
   }
 }
+ul.nextpreview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+}

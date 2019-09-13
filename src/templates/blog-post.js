@@ -37,29 +37,17 @@ const BlogPostTemplate = props => {
         </div>
         <hr />
 
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={`/${previous.url}`} rel="prev">
-                ← {previous.titulo}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={`/${next.url}`} rel="next">
-                {next.titulo} →
-              </Link>
-            )}
-          </li>
+        <ul className="nextpreview">
+          {previous && (
+            <Link to={`/${previous.url}`} rel="prev">
+              <li>← {previous.titulo}</li>
+            </Link>
+          )}
+          {next && (
+            <Link to={`/${next.url}`} rel="next">
+              <li>{next.titulo} →</li>
+            </Link>
+          )}
         </ul>
       </div>
     </Layout>

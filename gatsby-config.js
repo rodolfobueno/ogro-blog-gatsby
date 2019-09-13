@@ -51,7 +51,7 @@ const plugins = [
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
-      name: `Site do Ogro Selvagem`,
+      name: `Blog do Ogro Selvagem`,
       short_name: `ogroselvagem.com.br`,
       start_url: `/`,
       background_color: `#ffffff`,
@@ -85,7 +85,7 @@ module.exports = {
   siteMetadata: {
     title: `Ogro Selvagem - Desmistificador do Sexo`,
     author: `Ogro Selvagem`,
-    description: `Site do Ogro Selvagem. O deterntor do guia do Sexo. Por um mundo com mais sexo e orgasmos.`,
+    description: `Blog do Ogro Selvagem. O deterntor do guia do Sexo. Por um mundo com mais sexo e orgasmos.`,
     siteUrl: `https://www.ogroselvagem.com.br/`,
     social: {
       instagram: `ogroselvagem`,

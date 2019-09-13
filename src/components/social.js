@@ -12,14 +12,14 @@ const Social = () => (
         >
           <img src={"../instagram.png"} alt="Logo do Istagram" />
         </a>
-        <a
+        {/* <a
           href="https://www.facebook.com/ogro.selvagem"
           className="facebook"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img src={"../facebook.png"} alt="Logo do Istagram" />
-        </a>
+        </a> */}
         <a
           href="mailto:contato@ogroselvagem.com.br"
           className="email"

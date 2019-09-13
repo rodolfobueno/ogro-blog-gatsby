@@ -47,10 +47,12 @@ const Home = () => (
                       <h6>
                         <strong>Ogro Selvagem</strong>
                       </h6>
-                      O ogro que ensina ! <br />
+                      Nada é tão bom <br />
+                      Que não possa melhorar.
                       <br />
-                      Não importa o que você tem <br />
-                      Mas o que faz com o que tem.
+                      <br />
+                      Segue o guia e vem com o Ogro.
+                      <br />
                     </div>
                     <Social />
                   </div>
@@ -66,6 +68,7 @@ const Home = () => (
                           rel="noopener noreferrer"
                           title="Realizar download do e-book"
                         >
+                          Guia: Oral neles
                           <img
                             src={"../ebook-oral-neles.png"}
                             width="200"
