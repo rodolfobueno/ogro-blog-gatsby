@@ -28,6 +28,7 @@ exports.createPages = async ({ graphql, actions }) => {
             node {
               id
               titulo
+              tituloseo
               url
             }
           }

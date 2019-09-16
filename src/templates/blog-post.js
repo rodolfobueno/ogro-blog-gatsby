@@ -13,7 +13,7 @@ const BlogPostTemplate = props => {
   const post = props.data.strapiArtigo
   return (
     <Layout>
-      <SEO title={post.titulo} description={post.titulo} />
+      <SEO title={post.tituloseo} description={post.tituloseo} />
       <div className="container justify-content-center">
         <section>
           <h1>{post.titulo}</h1>
@@ -58,6 +58,7 @@ export const pageQuery = graphql`
   query BlogPostTemplate($id: String!) {
     strapiArtigo(id: { eq: $id }) {
       titulo
+      tituloseo
       conteudo
       data(formatString: "DD/MM/YYYY")
       autor {
