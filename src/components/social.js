@@ -12,14 +12,14 @@ const Social = () => (
         >
           <img src={"../instagram.png"} alt="Logo do Istagram" />
         </a>
-        {/* <a
-          href="https://www.facebook.com/ogro.selvagem"
-          className="facebook"
+        { <a
+          href="https://www.youtube.com/channel/UCJJZxlPXshI649iWSkEtpYw/"
+          className="youtube border-radius"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={"../facebook.png"} alt="Logo do Istagram" />
-        </a> */}
+          <img src={"../youtube.png"} alt="Logo do Youtube" />
+        </a>}
         <a
           href="mailto:contato@ogroselvagem.com.br"
           className="email"
@@ -27,6 +27,14 @@ const Social = () => (
           rel="noopener noreferrer"
         >
           <img src={"../gmail.png"} alt="Me envie um e-mail" />
+        </a>
+        <a
+          href="https://twitter.com/ogroselvagem"
+          className="twitter"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={"../twitter.png"} alt="Me envie um e-mail" />
         </a>
       </li>
     </ul>
