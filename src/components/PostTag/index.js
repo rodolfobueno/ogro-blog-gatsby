@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Tag } from 'styled-icons/boxicons-regular/Tag'
 
-const CardTag = ({ tags }) => (
-    <div class="box-tags pt-2">
+const PostTag = ({ tags, ...props }) => (
+    <div className={`box-tags ${ props.className ? props.className : ''  } ` }>
       <TagIcon />
         {tags.map( tag  => <span>{tag.nome}</span>)}
     </div>
@@ -15,4 +15,4 @@ export const TagIcon = styled(Tag)`
   width: 12px;
 `
 
-export default CardTag
+export default PostTag

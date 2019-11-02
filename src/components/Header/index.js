@@ -3,6 +3,7 @@ import {
   Navbar,
   NavbarBrand,
 } from "reactstrap"
+import { Link } from "gatsby"
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -23,14 +24,16 @@ export default class Header extends React.Component {
       <div>
         <Navbar light fixed="top" expand="sm">
           <div className="container justify-content-center">
-            <NavbarBrand href="/">
-              <img
-                src={"../ogro-logo.png"}
-                width="120"
-                height="80"
-                alt="Logo do Ogro"
-              />
-            </NavbarBrand>
+            <Link to="/" rel="next">
+              <NavbarBrand>
+                <img
+                  src={"../ogro-logo.png"}
+                  width="120"
+                  height="80"
+                  alt="Logo do Ogro"
+                />
+              </NavbarBrand>
+            </Link>
           </div>
         </Navbar>
       </div>

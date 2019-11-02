@@ -4,8 +4,8 @@ import SEO from "../components/seo"
 import { graphql, StaticQuery } from "gatsby"
 import { Col, Row } from "reactstrap"
 import Post from "../components/post"
-import Perfil from "../components/perfil"
-import Ebooks from "../components/ebooks"
+import Profile from "../components/profile"
+import EbookList from "../components/EbookList"
 
 const Home = () => (
   <Layout>
@@ -37,8 +37,8 @@ const Home = () => (
                   </Row>
                 </div>
                 <div className="col-lg-3 col-md-12 col-12  box-info-ogro">
-                  <Perfil />
-                  <Ebooks />
+                  <Profile />
+                  <EbookList />
                 </div>
               </div>
             </section>

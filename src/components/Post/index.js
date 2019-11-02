@@ -3,7 +3,8 @@ import { Card, CardTitle, CardText, CardBody, CardSubtitle } from "reactstrap"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import PropTypes from "prop-types"
-import CardTag from "../components/card-tag"
+import PostTag from "../PostTag"
+
 
 const Post = ({ titulo, autor, id, data, resumo, imgFluid, tags }) => (
   <Link to={`/${id}`} className="link-card" title={titulo}>
@@ -15,7 +16,7 @@ const Post = ({ titulo, autor, id, data, resumo, imgFluid, tags }) => (
           por <span className="text-info">{autor}</span> |{" "}
           <span className="text-info">{data}</span>
         </CardSubtitle>
-        <CardTag tags={tags} />
+        <PostTag className="pt-2" tags={tags} />
         <hr className="mt-1" />
         <CardText>{resumo}</CardText>
       </CardBody>

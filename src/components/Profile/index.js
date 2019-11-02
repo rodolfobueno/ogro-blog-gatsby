@@ -1,7 +1,7 @@
 import React from "react"
-import Social from "../components/social"
+import Social from "../Social"
 
-const Perfil = () => (
+const Profile = () => (
 
     <div className="col-12 justify-content-center perfil">
         <img
@@ -26,4 +26,4 @@ const Perfil = () => (
     </div>
 )
 
-export default Perfil
+export default Profile

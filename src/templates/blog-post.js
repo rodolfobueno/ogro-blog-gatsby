@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PostTag from "../components/PostTag"
 
 import Reactmarkdown from "react-markdown"
 
@@ -14,16 +15,18 @@ const BlogPostTemplate = props => {
   return (
     <Layout>
       <SEO title={post.tituloseo} description={post.tituloseo} />
-      <div className="container justify-content-center">
-        <section>
-          <h1>{post.titulo}</h1>
-        </section>
-        <hr />
-        <div className="text-center">
-          por <span className="text-info">{post.autor.username}</span> |{" "}
-          <span className="text-info">{post.data}</span>
+      <div className="blog-post container">
+        <Link to="/" rel="back">
+          ← Voltar para listagem
+        </Link>
+        <div className="header-info pt-4">
+          {post.data}
         </div>
-        <div className="pt-5 pb-3">
+        <PostTag tags={post.tags} className="pt-3" />
+        <div className="py-2">
+          <h1>{post.titulo}</h1>
+        </div>
+        <div className="py-3">
           <Reactmarkdown
             source={post.conteudo}
             transformImageUri={uri =>
@@ -60,7 +63,10 @@ export const pageQuery = graphql`
       titulo
       tituloseo
       conteudo
-      data(formatString: "DD/MM/YYYY")
+      tags {
+        nome
+      }
+      data(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
       autor {
         id
         username
