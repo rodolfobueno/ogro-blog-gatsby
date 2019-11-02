@@ -4,10 +4,35 @@
   &:hover {
     border: 1px solid #b19d9d;
   }
-  .card-title,
-  .card-subtitle {
+  .card-title {
+    font-size: 18px;
     text-align: center;
   }
+  .card-subtitle {
+    font-size: 11px;
+  }
+
+  .box-tags {
+    display: inline-flex;
+
+    span {
+      align-items: center;
+      letter-spacing: 2px;
+      font-size: 11px;
+      text-transform: lowercase;
+      vertical-align: top;
+
+      &:not(:last-child) {
+        margin-right: 2px;
+    
+        &:after {
+          content: ', ';
+          height: 2rem;
+        }
+      }
+    }
+  }
+
 }
 .link-card {
   color: #333 !important;

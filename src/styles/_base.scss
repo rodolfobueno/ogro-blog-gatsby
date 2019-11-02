@@ -15,7 +15,7 @@ html {
       height: 100%;
       .layout-header {
         .navbar {
-          background-color: $white;
+          background-color: $black;
           border-bottom: 1px solid rgba(0, 0, 0, 0.4);
           line-height: 1;
           height: 100px;
@@ -105,6 +105,13 @@ html {
     }
   }
 }
+
+.perfil {
+  border: 1px solid $light-gray;
+  padding: 19px 5px;
+  background-color: $white;
+}
+
 .ogro-face {
   border-radius: 50%;
   box-sizing: border-box;
@@ -123,7 +130,11 @@ html {
       display: inline-block;
 
       a {
-        padding: 0 15px;
+        padding: 0 8px;
+
+        img {
+          border-radius: 8px;
+        }
       }
     }
   }
