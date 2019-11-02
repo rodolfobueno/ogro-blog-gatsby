@@ -56,7 +56,7 @@ const plugins = [
       short_name: `ogroselvagem.com.br`,
       start_url: `/`,
       background_color: `#ffffff`,
-      theme_color: `#4d8c67`,
+      theme_color: `#dd3cbf`,
       display: `minimal-ui`,
       icon: `content/assets/icon-pwa.png`,
     },
