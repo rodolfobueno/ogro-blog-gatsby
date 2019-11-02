@@ -1,10 +1,10 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
 import { graphql, StaticQuery } from "gatsby"
 import { Col, Row } from "reactstrap"
-import Post from "../components/post"
-import Profile from "../components/profile"
+import Layout from "../components/Layout"
+import SEO from "../components/Seo"
+import Post from "../components/Post"
+import Profile from "../components/Profile"
 import EbookList from "../components/EbookList"
 
 const Home = () => (
