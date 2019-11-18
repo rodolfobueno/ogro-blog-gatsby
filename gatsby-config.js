@@ -1,3 +1,7 @@
+require('dotenv').config()
+
+const queries = require("./src/utils/algolia_queries")
+
 const plugins = [
   "gatsby-plugin-sass",
   "gatsby-plugin-offline",
@@ -66,6 +70,17 @@ const plugins = [
     resolve: "gatsby-plugin-netlify-cache",
     options: {
       cachePublic: true,
+    },
+  },
+  {
+    resolve: `gatsby-plugin-algolia-search`,
+    options: {
+      appId: process.env.ALGOLIA_APP_ID,
+      apiKey: process.env.ALGOLIA_ADMIM_KEY,
+      indexName: process.env.ALGOLIA_INDEX_NAME,
+      queries,
+      chunkSize: 10000,
+      enablePartialUpdates: true,
     },
   },
 ]
